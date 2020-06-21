@@ -41,7 +41,7 @@ for index in range(len(lines)):
 		items = line.split(":")
 		for item in items:
 			bbox = [int(x) for x in item.split(",")]
-			ann = {"image_id": image_id, "category_id": categories.index(category), "id": ann_id, "bbox": bbox}
+			ann = {"image_id": image_id, "category_id": categories.index(category), "id": ann_id, "bbox": bbox, "area": bbox[2] * bbox[3]}
 			annotations.append(ann)
 			ann_id = ann_id + 1
 		image_id = image_id + 1
